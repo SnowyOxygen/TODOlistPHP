@@ -1,0 +1,11 @@
+A faire dans l'ordre d'importance:
+
+page connexion
+page dashboard
+creation de taches dans la liste de taches
+bdd JSON
+verification de l'utilisateur et son mdp
+enregistrement des taches dans le bdd
+chargement de ses taches depuis le bdd
+création d'autres listes de taches supplémentaires pour chaque utilisateur
+style CSS
