@@ -1,36 +1,35 @@
 <?php
-    $JSONFile = file_get_contents('bdd.json');
-    $JSONData = json_decode($JSONFile, true);
-
     function GetUsers(){
         global $JSONData;
 
-        foreach ($JSONData as $key) {
-            echo '<li class="user-element"><button class="user-button">' . $key . "</button></li>";
+        $userList = '';
+
+        foreach ($JSONData as $key => $value) {
+            $userList .= '<option value="' . $key . '">' . $key . '</li>';
         }
+        
+        return $userList;
     }
-    function SetUser($username){
-        $_SESSION['username'] = $username;
-    }
-    function CreateUser(){
+
+    function CreateUser(string $username){
         global $JSONData;
-    
-        $userData = [{}];
-        //TODO: Save to file / check structure to append dict element
-        array_push($JSONData, $username => $userData)
-    }
-    function SubmitHandler(){
-        // prevent default
+        echo 'Creating User';
+
+        $JSONData[$username] = [];
+        UpdateData();
     }
 
     echo '
         <h1 class="choose">Choissisez un utilisateur.</h1>
-        <div>
-            <ul class="user-list">' . GetUsers() . '</ul>
-        </div>
+            <form action="./locationhandle.php" method="post">
+                <div>
+                    <select name="username" class="user-select">' . GetUsers() . '</select>
+                    <input type="submit">
+                </div>
+            </form>
         <p class="new-user">Create user:</p>
-        <form action="" method="post">
-            <input type="text" placeholder="username" required maxlength="16"/>
+        <form action="./locationhandle.php" method="post">
+            <input name="newuser" type="text" placeholder="username" required maxlength="16"/>
             <input type="submit"/>
         </form>
     ';
