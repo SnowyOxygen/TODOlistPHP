@@ -1,0 +1,8 @@
+body,html{
+    display: flex;
+    flex-direction: column;
+}
+
+ul.user-list{
+    list-style: none;
+}

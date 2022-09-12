@@ -1,20 +1,22 @@
 {
-    "TACHE 1" : {
-        "tache" : "Finir la todolist",
-        "status" : "à faire",
-        "hour" : 17,
-        "minute": 0,
-        "day" : 5,
-        "month" : 9,
-        "year" : 2025 
-    },
-    "TACHE 2" : {
-        "tache" : "Essayer de finir la todolist",
-        "status" : "en cours",
-        "hour" : 17,
-        "minute": 0,
-        "day" : 5,
-        "month" : 9,
-        "year" : 2022 
-    }
+    "user1" : [
+        {
+            "name" : "faire tache 1",
+            "progress" : "à faire"
+        },
+        {
+            "name" : "faire tache 2",
+            "progress" : "fait"
+        }
+    ],
+    "user2" : [
+        {
+            "name" : "do task 1",
+            "progress" : "to do"
+        },
+        {
+            "name" : "do task 2",
+            "progress" : "done"
+        }
+    ]
 }
