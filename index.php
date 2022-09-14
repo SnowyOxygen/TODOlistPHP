@@ -1,9 +1,16 @@
 <?php 
     session_start();
 
+    //Access to DB
     $JSONFile = file_get_contents('bdd.json');
     $JSONData = json_decode($JSONFile, true);
 
+    if(isset($_GET['action']) && $_GET['action'] == 'disconnect'){
+        Disconnect();
+        header('Location: index.php');
+    }
+
+    //Encode and write to bdd.json
     function UpdateData(){
         global $JSONData;
         global $JSONFile;
@@ -13,6 +20,7 @@
         $JSONFile = file_get_contents('bdd.json');
     }
 
+    //Disconnect user
     function Disconnect(){
         unset($_SESSION['username']);
     }

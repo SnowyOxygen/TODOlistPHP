@@ -1,4 +1,5 @@
 <?php
+    //Display available dashboards / users
     function GetUsers(){
         global $JSONData;
 
@@ -11,10 +12,12 @@
         return $userList;
     }
 
+    //Add user to DB
     function CreateUser(string $username){
         global $JSONData;
         echo 'Creating User';
 
+        //TODO: Check for existing usernames
         $JSONData[$username] = [];
         UpdateData();
     }

@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    //Access to DB
     $JSONFile = file_get_contents('bdd.json');
     $JSONData = json_decode($JSONFile, true);
 
@@ -24,8 +25,9 @@
         file_put_contents('bdd.json', $encode);
         unset($_POST);
 
-        header('Location: /TODOlistPHP');
+        header('Location: index.php');
     }
+
     //Called when a username is chosen
     function UsernameHandler(){
         //XSS Security
@@ -34,6 +36,6 @@
         $_SESSION['username'] = $safeUser;
         unset($_POST['username']);
 
-        header('Location: /TODOlistPHP'); 
+        header('Location: index.php'); 
     }
 ?>
