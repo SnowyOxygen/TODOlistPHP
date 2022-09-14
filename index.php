@@ -13,6 +13,10 @@
         $JSONFile = file_get_contents('bdd.json');
     }
 
+    function Disconnect(){
+        unset($_SESSION['username']);
+    }
+
 ?><!DOCTYPE html>
 <html lang="fr-FR">
 <head>

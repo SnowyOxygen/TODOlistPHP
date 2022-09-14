@@ -1,1 +1,4 @@
-{"user1":[{"name":"faire tache 1","progress":"to do"},{"name":"faire tache 2","progress":"done"}],"user2":[{"name":"do task 1","progress":"to do"},{"name":"do task 2","progress":"done"}],"heeeee":[],"LouisMarriott":[],"lmarriott":[],"Henry":[]}
+{"user1":[{
+    "name" : "finish todolist",
+    "progress" : "in progress"
+}]}

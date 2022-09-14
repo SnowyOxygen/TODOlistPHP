@@ -1,4 +1,6 @@
 body,html{
+    color: white;
+    background-color: black;
     display: flex;
     flex-direction: column;
 }
@@ -8,4 +10,8 @@ ul.user-list{
 }
 ul.tasklist{
     list-style: none;
+}
+li.task-element{
+    display: flex;
+    flex-direction: row;
 }

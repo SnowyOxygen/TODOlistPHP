@@ -15,7 +15,7 @@
     function NewUserHandler(){
         global $JSONData;
 
-        $safeUser = strip_tags($_POST['newuser']);
+        $safeUser = htmlspecialchars($_POST['newuser']);
 
         $_SESSION['username'] = $safeUser;
 
@@ -24,7 +24,7 @@
         file_put_contents('bdd.json', $encode);
         unset($_POST);
 
-        header('Location: /todolist/TODOlistPHP');
+        header('Location: /TODOlistPHP');
     }
     //Called when a username is chosen
     function UsernameHandler(){
@@ -34,6 +34,6 @@
         $_SESSION['username'] = $safeUser;
         unset($_POST['username']);
 
-        header('Location: /todolist/TODOlistPHP'); 
+        header('Location: /TODOlistPHP'); 
     }
 ?>
