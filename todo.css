@@ -15,3 +15,11 @@ li.task-element{
     display: flex;
     flex-direction: row;
 }
+p.task-name, p.task-progress{
+    padding-right: 20px;
+}
+button.task-delete{
+    align-self: center;
+    height: 25px;
+    width: 25px;
+}

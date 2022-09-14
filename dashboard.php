@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['newtask'])){
+    if(isset($_POST['newtask']) && $_POST['newtask'] != ''){
 
         if(isset($_SESSION['username'])){
             NewTask();
@@ -28,10 +28,12 @@
         $tasks = $JSONData[$_SESSION['username']];
 
         foreach ($tasks as $key => $value) {
-            $taskName = '<p class="task-name">' . $value['name'] . '</p>';
-            $taskProgress = '<p class="task-progress">' . $value['progress'] . '</p>';
+            $taskName = '<td>' . $value['name'] . '</td>';
+            $taskProgress = '<td>' . $value['progress'] . '</td>';
+            $delButton = '<td><button class="task-delete">x</button></td>';
             // TODO: delete button
-            echo '<li class="task-element">' . $taskProgress . $taskName . '</li>';
+            // TODO: color taskProgress based on progress
+            echo '<tr>' . $taskName . $taskProgress . $delButton . '</tr>';
         }
     }
 
@@ -51,6 +53,9 @@
 </form>
 
 <!-- Show existing tasks -->
-<ul class="tasklist">
+<tr>
+    <th>Task</th>
+    <th>Progress</th>
+    <th>Action</th>
+</tr>
 <?php GetTasks(); ?>
-</ul>
